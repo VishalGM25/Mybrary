@@ -14,8 +14,11 @@
   app.use(bodyParser.urlencoded({limit: '10mb', extended:false}))
 
   const mongoose = require('mongoose')
-  mongoose.connect("mongodb+srv://admin-vishal:Gabbar5636@cluster0.6kijb.mongodb.net/myBraryDB", { useNewUrlParser: true,  useUnifiedTopology: true})
+  mongoose.connect("mongodb+srv://admin-vishal:Gabbar25@cluster0.6kijb.mongodb.net/myBraryDB", { useNewUrlParser: true,  useUnifiedTopology: true})
   mongoose.set('useCreateIndex', true);
+  const db = mongoose.connection
+  db.on('error', error => console.error(error))
+  db.once('open', () => console.log('Connected to Mongoose'))
   
   app.use('/', indexRouter)
   app.use('/authors',authorsRouter)
