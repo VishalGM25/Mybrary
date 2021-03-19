@@ -5,6 +5,7 @@
   const indexRouter = require('./routers/index')
   const authorsRouter = require('./routers/author')
   const bodyParser = require('body-parser')
+  require('dotenv').config()
   
   app.set('view engine', 'ejs')
   app.set('views', __dirname + '/views')
