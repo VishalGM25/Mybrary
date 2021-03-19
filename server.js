@@ -1,7 +1,4 @@
-
-const dotenv = require("dotenv");
-dotenv.config('.env');
-  const express = require('express')
+ const express = require('express')
   const app = express()
   const expressLayouts = require('express-ejs-layouts')
   
@@ -17,7 +14,7 @@ dotenv.config('.env');
   app.use(bodyParser.urlencoded({limit: '10mb', extended:false}))
 
   const mongoose = require('mongoose')
-  mongoose.connect("mongodb://localhost:27017/myBrary", { useNewUrlParser: true,  useUnifiedTopology: true})
+  mongoose.connect("mongodb+srv://admin-vishal:Gabbar5636@cluster0.6kijb.mongodb.net/myBraryDB", { useNewUrlParser: true,  useUnifiedTopology: true})
   mongoose.set('useCreateIndex', true);
   
   app.use('/', indexRouter)
